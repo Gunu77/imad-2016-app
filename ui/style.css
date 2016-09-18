@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: lightgrey;
+    background-image:url("supernatural.jpg");
     margin-top: 75px;
 }
 
@@ -19,3 +20,4 @@ body {
 .img-medium {
     height: 200px;
 }
+
