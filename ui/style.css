@@ -1,15 +1,21 @@
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 body {
-	background-image: url("supernatural.jpg");
+    font-family: sans-serif;
+    background-color: lightgrey;
+    margin-top: 75px;
 }
 
-.container{
-	margin:0 auto;
+.center {
+    text-align: center;
 }
 
+.text-big {
+    font-size: 300%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.img-medium {
+    height: 200px;
+}
