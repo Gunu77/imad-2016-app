@@ -4,8 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var about={
+var articles={
+about={
     title:'About',
     content:`<div class="col-md-5"><p style="font-size:120%; color:lightblue; margin-top:40px;"><b><u>Supernatural is an American fantasy horror television series created by Eric Kripke. It was first broadcast on September 13, 2005, on The WB, and subsequently became part of successor The CW's lineup. Starring Jared Padalecki as Sam Winchester and Jensen Ackles as Dean Winchester, the series follows the two brothers as they hunt demons, ghosts, monsters, and other supernatural beings in the world. The series is produced by Warner Bros. Television, in association with Wonderland Sound and Vision. Along with Kripke, executive producers have been McG, Robert Singer, Phil Sgriccia, Sera Gamble, Jeremy Carver, John Shiban, Ben Edlund and Adam Glass. Former executive producer and director Kim Manners died of lung cancer during production of the fourth season.</u></b></p></div>`
 };
