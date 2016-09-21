@@ -7,12 +7,16 @@
 
 body {
 	background-image: url("https://github.com/Gunu77/imad-2016-app/blob/master/ui/supernatural.jpg");
+	
 }
 
 .container-fluid{
 	margin:0 auto;
 }
 
+.h1{
+    color:red;
+}
 
 
 
