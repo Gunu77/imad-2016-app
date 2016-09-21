@@ -1,8 +1,22 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+	background-image: url("https://images3.alphacoders.com/124/124609.jpg");
+}
+
+.container-fluid{
+	margin:0 auto;
+}
 
 
-.body{
-        background-image: url("https://images3.alphacoders.com/124/thumb-1920-124609.jpg");
-    }
+
+
+    
 
 
 
