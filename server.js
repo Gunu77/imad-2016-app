@@ -19,6 +19,10 @@ app.get('/about', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
+app.get('/ui/main,js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
 app.get('/meetthefamily', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'meetthefamily.html'));
 });
@@ -26,6 +30,8 @@ app.get('/meetthefamily', function (req, res) {
 app.get('/creatures', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'creatures.html'));
 });
+
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
