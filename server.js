@@ -9,19 +9,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var counter=0;
-app.get('/counter', function (req, res) {
-    counter=counter+1;
-    res.send(counter.toString());
-});
+
 
 app.get('/about', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
-app.get('/ui/main,js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
 
 app.get('/meetthefamily', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'meetthefamily.html'));
@@ -39,6 +32,12 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/ui/supernatural.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'supernatural.jpg'));
+});
+
+var counter=0;
+app.get('/counter', function (req, res) {
+    counter=counter+1;
+    res.send(counter.toString());
 });
 
 
