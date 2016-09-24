@@ -13,10 +13,11 @@ button.onclick=function() {
               span.innerHTML=counter.toString();
           }  
         }
+    };
         
     request.open('GET','http://gunu77.imad.hasura-app.io/counter',true);
     request.send(null);
-    };
+    
    
    
    
