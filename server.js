@@ -41,7 +41,7 @@ app.get('/creatures', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'creatures.html'));
 });
 
-app.get('/creatures1', function (req, res) {
+app.get('/ui/creatures1.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'creatures1.html'));
 });
 
