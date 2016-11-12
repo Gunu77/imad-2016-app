@@ -51,7 +51,7 @@ app.get('/ui/supernatural.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'supernatural.jpg'));
 });
 
-
+app.get('/ui/css/bootstrap.css', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'bootstrap.css')); });
 
 
 
