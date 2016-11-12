@@ -51,11 +51,7 @@ app.get('/ui/supernatural.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'supernatural.jpg'));
 });
 
-var counter=0;
-app.get('/counter', function (req, res) {
-    counter=counter+1;
-    res.send(counter.toString());
-});
+
 
 
 
