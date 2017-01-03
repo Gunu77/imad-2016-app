@@ -34,15 +34,15 @@ app.get('/about', function (req, res) {
 
 
 app.get('/meetthefamily', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'meetthefamily.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'meet the family.html'));
 });
 
 app.get('/creatures', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'creatures.html'));
 });
 
-app.get('/ui/creatures1.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'creatures1.html'));
+app.get('/episodes', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'episodes.html'));
 });
 
 
