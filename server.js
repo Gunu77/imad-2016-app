@@ -34,8 +34,8 @@ app.get('/ui/about.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
-app.get('/about.html', function (req, res) {
-  res.sendFile(path.join(__dirname, '/', 'about.html'));
+app.get('/about1.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'about1.html'));
 });
 
 app.get('/ui/meetthefamily.html', function (req, res) {
