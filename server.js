@@ -32,8 +32,8 @@ app.get('/article-db',function(req,res){
 
 
 
-app.get('/about1.html', function (req, res) {
-  res.sendFile(path.join(__dirname, '/', 'about1.html'));
+app.get('/about.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'about.html'));
 });
 
 
@@ -42,22 +42,22 @@ app.get('/meetthefamily.html', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'meetthefamily.html'));
 });
 
-app.get('/ui/creatures.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'creatures.html'));
+app.get('/creatures.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'creatures.html'));
 });
 
-app.get('/ui/exorcism1.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'exorcism1.html'));
+app.get('/exorcism1.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'exorcism1.html'));
 });
 
 
 
-app.get('/ui/exorcism2.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'exorcism2.html'));
+app.get('/exorcism2.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'exorcism2.html'));
 });
 
-app.get('/ui/episodes.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'episodes.html'));
+app.get('/episodes.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'episodes.html'));
 });
 
 app.get('/ui/css/bootstrap.css', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'bootstrap.css')); });
