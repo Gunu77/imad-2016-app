@@ -38,7 +38,7 @@ app.get('/ui/meetthefamily.html', function (req, res) {
 });
 
 app.get('/meetthefamily.html', function (req, res) {
-  res.sendFile(path.join(__dirname, '', 'meetthefamily.html'));
+  res.sendFile(path.join(__dirname, '/', 'meetthefamily.html'));
 });
 
 app.get('/ui/creatures.html', function (req, res) {
