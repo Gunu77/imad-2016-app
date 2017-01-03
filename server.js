@@ -37,22 +37,22 @@ app.get('/ui/meetthefamily.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'meetthefamily.html'));
 });
 
-app.get('/creatures', function (req, res) {
+app.get('/ui/creatures.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'creatures.html'));
 });
 
-app.get('/episodes', function (req, res) {
+app.get('/ui/exorcism1.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'exorcism1.html'));
+});
+
+
+
+app.get('/ui/exorcism2.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'exorcism2.html'));
+});
+
+app.get('/ui/episodes.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'episodes.html'));
-});
-
-
-
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-app.get('/ui/supernatural.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'supernatural.jpg'));
 });
 
 app.get('/ui/css/bootstrap.css', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'bootstrap.css')); });
