@@ -30,9 +30,7 @@ app.get('/article-db',function(req,res){
     });
 });
 
-app.get('/ui/about.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
-});
+
 
 app.get('/about1.html', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'about1.html'));
