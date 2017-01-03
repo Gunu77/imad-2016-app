@@ -14,7 +14,11 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'gs.html'));
+  res.sendFile(path.join(__dirname, '/', 'gs.html'));
+});
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'about.html'));
 });
 
 var pool=new Pool(config);
