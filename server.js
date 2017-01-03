@@ -14,10 +14,10 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'gs.html'));
+  res.sendFile(path.join(__dirname, '/', 'gs.html'));
 });
 
-app.get('/', function (req, res) {
+app.get('/about', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
