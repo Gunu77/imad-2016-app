@@ -33,7 +33,7 @@ app.get('/ui/about.html', function (req, res) {
 });
 
 
-app.get('/meetthefamily', function (req, res) {
+app.get('/ui/meet the family.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'meet the family.html'));
 });
 
