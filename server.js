@@ -28,7 +28,7 @@ app.get('/article-db',function(req,res){
     });
 });
 
-app.get('/about', function (req, res) {
+app.get('/about.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
