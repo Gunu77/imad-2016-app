@@ -32,7 +32,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'gs.html'));
 });
 
-
+app.get('/hash/:input', function (req, res) {
+   var hashedString= hash(req.params.input);
+   res.send(hashedString);
+});
 
 var pool=new Pool(config);
 app.get('/article-db',function(req,res){
