@@ -2,6 +2,9 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+
+
+
 var config={
     user:'gunu77',
     database:'gunu77',
@@ -12,6 +15,11 @@ var config={
 
 var app = express();
 app.use(morgan('combined'));
+
+app.get('/test-db', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'gs.html'));
+});
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'gs.html'));
