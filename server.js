@@ -48,8 +48,12 @@ app.get('/create-user', function (req, res) {
     var salt=crypto.getRandomBytes(128).toString('hex');
     var dbString=hash(password,salt);
     pool.query('INSERT INTO "user" (username,password) VALUES($1, $2)',[username, dbString], function(err,result) {
-        
-    })
+     if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send('User successfully created: ' + username);
+        }   
+    });
 });    
 
 var pool=new Pool(config);
