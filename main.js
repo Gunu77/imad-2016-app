@@ -10,7 +10,7 @@ var submit=document.getElementById('submit_btn');
         if(request.readyState===XMLHttpRequest.DONE) {
             console.log("Gunu is great");
             if(request.status===200) {
-                
+                console.log("I am a good boy");
                console.log('user logged in');
                alert('Logged in successfully');
             } else if(request.status === 403) {
