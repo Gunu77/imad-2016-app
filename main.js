@@ -1,6 +1,7 @@
 
 var submit=document.getElementById('submit_btn');
  submit.onsubmit=function() {
+     console.log("i am in");
     
     var request=new XMLHttpRequest();
     
