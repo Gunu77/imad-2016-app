@@ -1,6 +1,6 @@
 
 var submit=document.getElementById('submit_btn');
- submit.onsubmit=function() {
+ submit.onclick=function() {
      console.log("i am in");
     
     var request=new XMLHttpRequest();
@@ -8,7 +8,7 @@ var submit=document.getElementById('submit_btn');
     request.onreadystatechange=function() {
         
         if(request.readyState===XMLHttpRequest.DONE) {
-            
+            console.log("Gunu is great");
             if(request.status===200) {
                 
                console.log('user logged in');
