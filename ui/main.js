@@ -23,6 +23,8 @@ submit.onclick=function() {
         }
         
     };
-    var 
-    
-}
+    var nameInput=document.getElementById('none');
+    var name=nameInput.value;
+    request.open('POST',' http://gunu77.imad.hasura-app.io/submit-name?name=' + name,true);
+    request.send('JSON')
+};
