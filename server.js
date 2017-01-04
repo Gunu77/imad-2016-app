@@ -67,7 +67,12 @@ app.post('/login',function (req, res) {
      if(err){
             res.status(500).send(err.toString());
         }else{
-            res.send('User successfully created: ' + username);
+            if(result.rows.length===0) {
+                res.send(403).send('username/password is invalid');
+            } else{
+                res.send('User successfully created: ' + username);
+            }
+            
         }   
     });
     
