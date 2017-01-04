@@ -34,7 +34,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'gs.html'));
 });
 
-
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'main.js'));
+});
 
 function hash(input, salt) {
     var hashed=crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
