@@ -130,6 +130,10 @@ app.get('/episodes.html', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'episodes.html'));
 });
 
+app.get('/loggedin.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'loggedin.html'));
+});
+
 app.get('/ui/css/bootstrap.css', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'bootstrap.css')); });
 
 
