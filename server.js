@@ -34,7 +34,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'gs.html'));
 });
 
-app.get('/login', function (req, res) {
+app.get('/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'main.js'));
 });
 
