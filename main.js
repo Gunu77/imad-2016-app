@@ -1,4 +1,4 @@
-window.onload=function() {
+
 var submit=document.getElementById('submit_btn');
  submit.onclick=function() {
     
@@ -28,5 +28,5 @@ var submit=document.getElementById('submit_btn');
     request.open('POST',' http://gunu77.imad.hasura-app.io/login',true);
     request.setRequestHeader('Content-Type','application/json');
     request.send(JSON.stringify({username: username, password: password }));
-};
+
 };
