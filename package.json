@@ -4,7 +4,7 @@
   "description": "IMAD 2016 course app",
   "main": "server.js",
   "engines":{
-    "node": "6.9.3"
+    "node": "4.1.1"
   },
   "scripts":{
     "test": "echo \"Error: no test specified\" && exit 1"
