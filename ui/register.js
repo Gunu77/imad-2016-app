@@ -1,6 +1,5 @@
 //registration page 
-$("#submit_btn").click(
-function(){
+$("#submit_btn").click(function(){
 	var user=$("#username").val();
 	var email=$("#email").val();
 	var pass=$("#password").val();
