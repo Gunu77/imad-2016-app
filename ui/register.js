@@ -14,7 +14,7 @@ $("#submit_btn").click(function(){
 			contentType: "application/json",
 			success: function(data){
 				alert(data.toString());
-				window.location.href='/login.html';
+				window.location.href='/ui/login.html';
 				
 			},
 			error: function(xhr, status, errorThrown){
