@@ -169,8 +169,12 @@ app.get('/episodes.html', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'episodes.html'));
 });
 
-app.get('/loggedin.html', function (req, res) {
-  res.sendFile(path.join(__dirname, '/', 'loggedin.html'));
+app.get('/ui/login.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
+});
+
+app.get('/register.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '/', 'register.html'));
 });
 
 app.get('/ui/:fileName', function (req, res) {
