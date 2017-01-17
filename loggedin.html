@@ -52,7 +52,7 @@ $(function(){
 
       </script>
 </head>
-<body onload="loadArticles(); loadLogin();">
+<body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -97,22 +97,31 @@ $(function(){
   </div>
 </nav>
 <div class="container">
-  <h2>Vertical (basic) form</h2>
-  <form>
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" placeholder="E-mail"/>
-    </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password" placeholder="Password"/>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox"> Remember me</label>
-    </div>
-    <input type="submit" id="login_btn" value="Login"/>
-    <input type="submit" id="register_btn" value = "Sign Up" />
-  </form>
+			<div class="vertical-align">
+				<ul>
+					
+						<h3 class="whitetext">Register account</h3> 
+						<div class="form-group">
+							<label for="username" class="sr-only">Username:</label>
+							<input type="text" class="form-control" id="username" placeholder="Username"/>
+							<span id="notifyuser" class="whitetext"></span>
+						</div>
+						<div class="form-group">
+							<label for="email" class="sr-only">Email:</label>
+							<input type="text" class="form-control" id="email" placeholder="Email ID: abc@example.com"/>
+							<span id="notifyemail" class="whitetext"></span>
+						</div>
+				
+						<div class="form-group">
+							<label for="password" class="sr-only">Password:</label>
+							<input type="password" class="form-control" id="password" placeholder="Password"/>
+						</div>
+					
+						<button type="submit" class="btn btn-primary" id="submit_btn">Register</button>
+						<li class="center"><a href="/login.html">Login to your account</a></li>
+				</ul>
+			</div>
+			<script type="text/javascript" src="/ui/js/register.js"></script>
 </div>
 <footer class="container-fluid text-center">
   <h4 style="color:red">In case of any query or feedback please contact us at singhgundeep5620@gmail.com</h4>
