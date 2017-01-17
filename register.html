@@ -34,6 +34,44 @@
     .carousel-caption {
       display: none; 
     }
+	  
+	  .vertical-align {
+   
+    display: flex;
+    align-items: center;
+	min-height: 100%;  /* Fallback for vh unit */
+	min-height: 100vh;
+	justify-content : center;
+	margin-bottom:0;
+}
+
+
+.vertical-align ul
+{
+    min-width: 500px;
+	list-style-type: none;
+}
+
+div.vertical-align ul li a{
+	color: white;
+}
+
+
+#notifyuser{
+	float:left;
+}
+
+#notifyemail{
+	float:left;
+}
+
+
+@media only screen and (max-width: 640px){
+    .vertical-align ul
+    {
+        min-width: 0;
+    }
+}
   }
 
 </style>
