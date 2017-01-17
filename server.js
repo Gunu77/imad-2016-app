@@ -162,7 +162,9 @@ app.get('/loggedin.html', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'loggedin.html'));
 });
 
-
+app.get('/ui/:fileName', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
+});
 
 
 
