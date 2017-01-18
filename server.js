@@ -42,6 +42,10 @@ app.get('/ui/log.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'log.html'));
 });
 
+app.get('/ui/signup.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'signup.html'));
+});
+
 app.get('/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'main.js'));
 });
