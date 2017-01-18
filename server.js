@@ -50,6 +50,10 @@ app.get('/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'main.js'));
 });
 
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
 function hash (input,salt){
     var hashed=crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
     return ["pbkdf2Sync","10000",salt, hashed.toString('hex')].join('$');
