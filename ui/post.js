@@ -32,7 +32,7 @@ submit.onclick = function() {
                 alert('Sorry, something went wrong. Try again');
             }
         };
-        request.open('POST', 'http://krithiskkv.imad.hasura-app.io/submit-article', true);
+        request.open('POST', 'http://gunu77.imad.hasura-app.io/about', true);
         request.setRequestHeader('Content-Type','application/json');
         request.send(JSON.stringify(articleData));
         
