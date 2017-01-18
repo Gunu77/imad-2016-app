@@ -1,139 +1,219 @@
 
-function loadLoginForm () {
-    var loginHtml = `
-        <h3>Login/Register to unlock awesome features</h3>
-        <input type="text" id="username" placeholder="username" />
-        <input type="password" id="password" />
-        <br/><br/>
-        <input type="submit" id="login_btn" value="Login" />
-        <input type="submit" id="register_btn" value="Register" />
-        `;
-    document.getElementById('login_area').innerHTML = loginHtml;
-    
-    // Submit username/password to login
-    var submit = document.getElementById('login_btn');
-    submit.onclick = function () {
-        // Create a request object
-        var request = new XMLHttpRequest();
-        
-        // Capture the response and store it in a variable
-        request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
-              // Take some action
-              if (request.status === 200) {
-                  submit.value = 'Sucess!';
-              } else if (request.status === 403) {
-                  submit.value = 'Invalid credentials. Try again?';
-              } else if (request.status === 500) {
-                  alert('Something went wrong on the server');
-                  submit.value = 'Login';
-              } else {
-                  alert('Something went wrong on the server');
-                  submit.value = 'Login';
-              }
-              loadLogin();
-          }  
-          // Not done yet
-        };
-        
-        // Make the request
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        console.log(username);
-        console.log(password);
-        request.open('POST', '/login', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
-        submit.value = 'Logging in...';
-        
-    };
-    
-    var register = document.getElementById('register_btn');
-    register.onclick = function () {
-        // Create a request object
-        var request = new XMLHttpRequest();
-        
-        // Capture the response and store it in a variable
-        request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
-              // Take some action
-              if (request.status === 200) {
-                  alert('User created successfully');
-                  register.value = 'Registered!';
-              } else {
-                  alert('Could not register the user');
-                  register.value = 'Register';
-              }
-          }
-        };
-        
-        // Make the request
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        console.log(username);
-        console.log(password);
-        request.open('POST', '/create-user', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
-        register.value = 'Registering...';
-    
-    };
+//as soon as the home page is loaded check to see if the user is logged in and build login/logout area accodingly
+checkLogin();
+loadPersArticles();
+loadProfArticles();
+
+function buildpost() {
+    var post_btn = document.getElementById('post_btn');
+    post_btn.innerHTML = '<a href="/post-article">Submit An Article</a>';
 }
 
-function loadLoggedInUser (username) {
-    var loginArea = document.getElementById('login_area');
-    loginArea.innerHTML = `
-        <h3> Hi <i>${username}</i></h3>
-        <a href="/logout">Logout</a>
-    `;
-}
-
-function loadLogin () {
-    // Check if the user is already logged in
+function checkLogin() {
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                loadLoggedInUser(this.responseText);
-            } else {
-                loadLoginForm();
+                buildLogout(this.responseText);
+                buildpost();
+                }
+            else {
+                buildLogin();
             }
         }
     };
-    
-    request.open('GET', '/check-login', true);
+    request.open('GET', 'http://gunu77.imad.hasura-app.io/check-login', true);
     request.send(null);
 }
 
-function loadArticles () {
-        // Check if the user is already logged in
+function loadPersArticles() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
-            var articles = document.getElementById('articles');
+            var articles = document.getElementById('PersList');
             if (request.status === 200) {
-                var content = '<ul>';
+                var content = '';
                 var articleData = JSON.parse(this.responseText);
                 for (var i=0; i< articleData.length; i++) {
-                    content += `<li>
-                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li>`;
+                    var articleName = escapeHTML(articleData[i].articlename);
+                    content += `<a href="/articles/${articleName}">${articleName}</a>`;
                 }
-                content += "</ul>"
                 articles.innerHTML = content;
             } else {
-                articles.innerHTML('Oops! Could not load all articles!')
+                articles.innerHTML('Oops! Could not load all articles!');
             }
         }
-    };
+};
     
-    request.open('GET', '/get-articles', true);
+    request.open('GET', '/get-articles/Personal', true);
     request.send(null);
 }
 
+function loadProfArticles() {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var articles = document.getElementById('ProfList');
+            if (request.status === 200) {
+                //var content = '<ul>';
+                var content = '';
+                var articleData = JSON.parse(this.responseText);
+                for (var i=0; i< articleData.length; i++) {
+                //    content += `<li>
+                content += `<a href="/articles/${articleData[i].articlename}">${articleData[i].articlename}</a>`;
+                //    (${articleData[i].date.split('T')[0]})`;
+                }
+                //content += "</ul>";
+                articles.innerHTML = content;
+            } else {
+                articles.innerHTML('Oops! Could not load all articles!');
+            }
+        }
+};
+    
+    request.open('GET', '/get-articles/Professional', true);
+    request.send(null);
+}
 
-// The first thing to do is to check if the user is logged in!
-loadLogin();
+//build login/registration form
+function buildLogin() {
+    var loginbtn = document.getElementById('loginbtn');
+    loginbtn.innerHTML = 'Login/Sign-up';
+    var loginarea = document.getElementById('loginarea');
+    loginarea.innerHTML = `<input type=text id = username placeholder=username /> 
+                            <br/> 
+                            <input type=password id = password placeholder = password /> 
+                            <br/>
+                            <small>Signed-up?</small>  <button id=Login>Sign-in</button>  
+                            <br/>
+                            <small>New user?</small> <button id=Register>Register</button>`;
+    var button2 = document.getElementById('Login');
+    button2.onclick = function () {
+        button2.innerHTML = 'Signing in..';
+        var request = new XMLHttpRequest();
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        if (username.trim().length > 0 && password.trim().length > 0) {
+            request.onreadystatechange = function() {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                    if (request.status === 200) {
+                        alert('Login successful');
+                        buildLogout(username);
+                        buildpost();
+                        if (window.location.pathname.split('/')[1] === 'articles'){
+                            buildsubcmnt();
+                        } 
+                    }
+                    else if (request.status === 403) {
+                            alert('Username/password does not exist');
+                            document.getElementById('username').value = '';
+                            document.getElementById('password').value = '';
+                    }
+                    else if (request.status === 500) {
+                        alert('An error occured');
+                        document.getElementById('username').value = '';
+                        document.getElementById('password').value = '';
+                    }
+                    button2.innerHTML = 'Sign-in';
+                }
+            };
+            request.open('POST', 'http://gunu77.imad.hasura-app.io/login', true);
+            request.setRequestHeader('Content-Type','application/json');
+            request.send(JSON.stringify({username : username, password: password}));
+        }
+        else {
+            alert('Username/password cannot be blank');
+        }
+    };
 
-// Now this is something that we could have directly done on the server-side using templating too!
-loadArticles();
+    var button3 = document.getElementById('Register');
+    button3.onclick = function () {
+        button3.innerHTML = 'Registering..';
+        var request = new XMLHttpRequest();
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        if (username.trim().length > 0 && password.trim().length > 0) {
+            request.onreadystatechange = function() {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                    if (request.status === 200) {
+                        alert('User ' + username + ' created successfully. You can now login.');
+                    }
+                    else if (request.status === 500) {
+                        alert('An error occured');
+                        document.getElementById('username').value = '';
+                        document.getElementById('password').value = '';
+                    }
+                button3.innerHTML = 'Register';
+                }
+            };
+            request.open('POST', 'http://gunu77.imad.hasura-app.io/create-user', true);
+            request.setRequestHeader('Content-Type','application/json');
+            request.send(JSON.stringify({username : username, password: password}));
+        }
+        else {
+            alert('Username/password cannot be blank');
+        }
+    };
+}
+
+function buildsubcmnt() {
+    var cmntarea = `
+                    Write a comment...
+                    <br/>
+                    <textarea rows="2" cols="50" class="scrollabletextbox" id="comment" name="comments" ></textarea>
+                    <br/>
+                <input type="submit" id="submit_btn" value="Submit"> </input>`;
+    document.getElementById('cmntInput').innerHTML = cmntarea;
+    document.getElementById('comment').addEventListener("keyup",function(event) {
+        if (event.keyCode == 13 ) {
+        event.preventDefault();
+        document.getElementById('submit_btn').click();
+        }
+    });
+    //on clicking Submit button, add the text in the comment box to the database and display the updated comments list 
+    var submit = document.getElementById('submit_btn');
+    submit.onclick = function() {
+        var commInput = document.getElementById('comment');
+        var comment = commInput.value;
+        if (comment > " ") {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState === XMLHttpRequest.DONE) {
+                if (request.status === 200) {
+                    var commentsData = JSON.parse(this.responseText);
+                    var list = '';
+                    for (var i=0;i<commentsData.length;i++) {
+                      list += '<li class="comment">' + escapeHTML(commentsData[i].comment)  + '<small>' + '-- ' + escapeHTML(commentsData[i].user_name) + ' ' + commentsData[i].date.split('T')[0] + '</small>' + '</li>' + '<br/>';
+                    }
+                    var ul = document.getElementById('commlist');
+                    ul.innerHTML = list;
+                    var cmntlink = document.getElementById('cmntlink');
+                    var cmntstring = commentsData[0].cmntcnt + ' comments';
+                    cmntlink.innerHTML = cmntstring;
+                    }
+                } 
+            };
+            request.open('POST', 'http://gunu77.imad.hasura-app.io/submit-cmnt/' + articleName, true);
+            request.setRequestHeader('Content-Type','application/json');
+            request.send(JSON.stringify({comment : comment, username : username}));
+            document.getElementById('comment').value="";
+        }
+    };
+}
+
+function escapeHTML (text)
+{
+    var $text = document.createTextNode(text);
+    var $div = document.createElement('div');
+    $div.appendChild($text);
+    return $div.innerHTML;
+}
+
+function buildLogout(username) { 
+    var loginbtn = document.getElementById('loginbtn');
+    loginbtn.innerHTML = 'Hi, ' + escapeHTML(username) + '<small>▼</small>';
+    var loginarea = document.getElementById('loginarea');
+    loginarea.innerHTML = '<a href="/logout">Logout</a>';
+}
+
+
