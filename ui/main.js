@@ -26,7 +26,7 @@ submit.onclick=function() {
            }
            
        }
-   };
+   
 };
 
    //Make a request
@@ -39,7 +39,7 @@ console.log(password);
    request.send(JSON.stringify({username: username,password: password}));
 };
 
-
+};
    //signup
    
  window.onload = function () {
