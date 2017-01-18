@@ -66,12 +66,12 @@ console.log(password);
         }
         };
         // Make the request
-        var username = document.getElementById('user').value;
-        var password = document.getElementById('pass').value;
+        var username1 = document.getElementById('user').value;
+        var password1 = document.getElementById('pass').value;
         console.log(username);
         console.log(password);
         request.open('POST', 'http://gunu77.imad.hasura-app.io/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username:username, password: password}));  
+        request.send(JSON.stringify({username:username1, password: password1}));  
         }; 
 };
