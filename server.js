@@ -181,8 +181,8 @@ app.get('/ui/log.html', function (req, res) {
 
 app.get('/ui/signup.html', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'signup.html')); });
 
-app.get('/js/jqBootstrapValidation.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/js', 'jqBootstrapValidation.js'));
+app.get('/ui/jqBootstrapValidation.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'jqBootstrapValidation.js'));
 });
 
 app.get('/vendor/bootstrap/css/bootstrap.css', function (req, res) {
