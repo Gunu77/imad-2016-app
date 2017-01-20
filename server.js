@@ -172,26 +172,17 @@ app.get('/ui/jqBootstrapValidation.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'jqBootstrapValidation.js'));
 });
 
-app.get('/ui/bootstrap.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'bootstrap.css'));
-});
 
-app.get('/ui/bootstrap.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'bootstrap.js'));
-});
 
-app.get('/ui/font-awesome.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'font-awesome.css'));
-});
 
-app.get('/ui/jquery.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'jquery.js'));
-});
+
+
+
 
 
 
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
-  console.log(`IMAD course app listening on port ${port}!`);
+  
 });
