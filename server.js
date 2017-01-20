@@ -17,6 +17,8 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + '/ui'));
+
 var pool=new Pool(config);
 app.get('/test-db', function (req, res) {
   pool.query('SELECT * FROM test', function (err, result) {
