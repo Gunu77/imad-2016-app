@@ -197,8 +197,8 @@ app.get('/ui/font-awesome.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'font-awesome.css'));
 });
 
-app.get('/vendor/jquery/jquery.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/vendor/jquery', 'jquery.js'));
+app.get('/ui/jquery.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'jquery.js'));
 });
 
 
