@@ -364,29 +364,23 @@ app.get('/creatures.html', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'creatures.html'));
 });
 
-app.get('/index.html', function(req, res){
-   res.sendFile(path.join(__dirname, 'ui','index.html')); 
+app.get('/gs.html', function(req, res){
+   res.sendFile(path.join(__dirname, '/','gs.html')); 
 });
 
 app.get('/about.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
+  res.sendFile(path.join(__dirname, '/', 'about.html'));
 });
 
 app.get('/contact.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
 });
 
-app.get('/css/my-blog.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/css', 'my-blog.css'));
-});
 
-app.get('/js/contact_me.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/js', 'contact_me.js'));
-});
 
-app.get('/mail/contact_me.php', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/mail', 'contact_me.php'));
-});
+
+
+
 
 app.get('/js/jqBootstrapValidation.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/js', 'jqBootstrapValidation.js'));
