@@ -179,7 +179,7 @@ app.get('/ui/log.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'log.html'));
 });
 
-app.get('/ui/css/bootstrap.css', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'bootstrap.css')); });
+app.get('/ui/signup.html', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'signup.html')); });
 
 
 
