@@ -131,7 +131,7 @@ app.get('/episodes.html', function (req, res) {
 });
 
 app.get('/ui/log.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'loggedin.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'log.html'));
 });
 
 app.get('/ui/signup.html', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'signup.html')); });
