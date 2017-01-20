@@ -143,7 +143,9 @@ app.get('/article-db',function(req,res){
     });
 });
 
-
+app.get('/ui/:fileName', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
+});
 
 app.get('/about.html', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'about.html'));
@@ -173,8 +175,8 @@ app.get('/episodes.html', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'episodes.html'));
 });
 
-app.get('/loggedin.html', function (req, res) {
-  res.sendFile(path.join(__dirname, '/', 'loggedin.html'));
+app.get('/ui/log.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'log.html'));
 });
 
 app.get('/ui/css/bootstrap.css', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'bootstrap.css')); });
