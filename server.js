@@ -169,9 +169,7 @@ app.get('/ui/jqBootstrapValidation.js', function (req, res) {
 
 
 
-app.get('/ui/jquery.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'jquery.js'));
-});
+
 
 
 
