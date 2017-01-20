@@ -181,6 +181,26 @@ app.get('/ui/log.html', function (req, res) {
 
 app.get('/ui/signup.html', function (req, res) { res.sendFile(path.join(__dirname, 'ui', 'signup.html')); });
 
+app.get('/js/jqBootstrapValidation.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/js', 'jqBootstrapValidation.js'));
+});
+
+app.get('/vendor/bootstrap/css/bootstrap.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/vendor/bootstrap/css', 'bootstrap.css'));
+});
+
+app.get('/vendor/bootstrap/js/bootstrap.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/vendor/bootstrap/js', 'bootstrap.js'));
+});
+
+app.get('/vendor/font-awesome/css/font-awesome.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/vendor/font-awesome/css', 'font-awesome.css'));
+});
+
+app.get('/vendor/jquery/jquery.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/vendor/jquery', 'jquery.js'));
+});
+
 
 
 
