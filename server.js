@@ -193,8 +193,8 @@ app.get('/ui/bootstrap.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'bootstrap.js'));
 });
 
-app.get('/vendor/font-awesome/css/font-awesome.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/vendor/font-awesome/css', 'font-awesome.css'));
+app.get('/ui/font-awesome.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'font-awesome.css'));
 });
 
 app.get('/vendor/jquery/jquery.js', function (req, res) {
