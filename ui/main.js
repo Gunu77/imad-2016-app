@@ -32,7 +32,7 @@ submit.onclick=function() {
 var password=document.getElementById('password').value;
 console.log(username);
 console.log(password);
-   request.open('POST','http://divya063.imad.hasura-app.io/login',true);
+   request.open('POST','http://gunu77.imad.hasura-app.io/login',true);
    request.setRequestHeader('Content-Type','application/json');
    request.send(JSON.stringify({username: username,password: password}));
 };
@@ -68,7 +68,7 @@ console.log(password);
         var password = document.getElementById('pass').value;
         console.log(username);
         console.log(password);
-        request.open('POST', 'http://divya063.imad.hasura-app.io/create-user', true);
+        request.open('POST', 'http://gunu77.imad.hasura-app.io/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username:username, password: password}));  
         }; 
