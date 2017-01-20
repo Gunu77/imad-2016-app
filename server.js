@@ -85,15 +85,32 @@ app.post('/login',function (req, res) {
                 var salt=dbString.split('$')[2];
                 var hashedPassword=hash(password, salt);
                 if(hashedPassword === dbString) {
+                    req.session.auth = {userId: result.rows[0].id};
                 res.send('Credentials Correct');
                 } else{
-                  res.send(403).send('username/password is invalid');  
+                    
+                  res.status(403).send('username/password is invalid');  
                 }
             }
             
         }   
     });
     
+});
+
+app.get('/check-login', function (req, res) {
+   if (req.session && req.session.auth && req.session.auth.userId) {
+       // Load the user object
+       pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              res.send(result.rows[0].username);    
+           }
+       });
+   } else {
+       res.status(400).send('You are not logged in');
+   }
 });
 
 var pool=new Pool(config);
