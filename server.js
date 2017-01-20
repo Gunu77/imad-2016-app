@@ -34,8 +34,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'gs.html'));
 });
 
-app.get('/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, '/', 'main.js'));
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 function hash(input, salt) {
