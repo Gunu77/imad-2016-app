@@ -189,8 +189,8 @@ app.get('/ui/bootstrap.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'bootstrap.css'));
 });
 
-app.get('/vendor/bootstrap/js/bootstrap.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/vendor/bootstrap/js', 'bootstrap.js'));
+app.get('/ui/bootstrap.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'bootstrap.js'));
 });
 
 app.get('/vendor/font-awesome/css/font-awesome.css', function (req, res) {
