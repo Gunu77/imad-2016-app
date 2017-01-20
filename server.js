@@ -14,6 +14,11 @@ var config = {
     password : process.env.DB_PASSWORD
 };
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '/','gs.html'));
+});
+
+
 var app = express();
 app.use(morgan('combined'));
 var path = require('path');
@@ -348,9 +353,6 @@ app.get('/:articleName',function (req,res) {
     });
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/','gs.html'));
-});
 
 app.get('/ui/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
