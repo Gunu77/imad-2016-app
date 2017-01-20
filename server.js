@@ -349,7 +349,7 @@ app.get('/:articleName',function (req,res) {
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/','gs.html'));
+  res.sendFile(path.join(__dirname, '','gs.html'));
 });
 
 app.get('/ui/:fileName', function (req, res) {
