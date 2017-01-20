@@ -349,14 +349,14 @@ app.get('/:articleName',function (req,res) {
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '','gs.html'));
+  res.sendFile(path.join(__dirname, '/','gs.html'));
 });
 
 app.get('/ui/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
 });
 
-app.get('/main.js', function (req, res) {
+app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
