@@ -27,6 +27,13 @@ submit.onclick=function() {
        }
    };
 
+window.onload = function () {
+
+var fb =document.getElementById('facebook');
+submit.onclick=function() {
+    request.open('https://www.facebook.com/gundeep.kaka');
+};
+};
    //Make a request
    var username=document.getElementById('username').value;
 var password=document.getElementById('password').value;
