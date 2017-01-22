@@ -2,7 +2,7 @@ console.log('Loaded!');
 
  //signup
    
- window.onload = function () {
+
 
    var register=document.getElementById('register_btn');
    
@@ -10,22 +10,22 @@ console.log('Loaded!');
     
         // Create a request object
         var request = new XMLHttpRequest();
-        
-        // Capture the response and store it in a variable
-        request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
-              // Take some action
-              if (request.status === 200) {
-                  alert('User created successfully');
-                  register.value = 'Registered!';
-              } else {
-                  alert('Could not register the user');
-                  register.value = 'Register';
-              }
-          
-        }
-        };
-        // Make the request
+    	request.onreadystatechange = function(){
+    		if(request.readyState === XMLHttpRequest.DONE){
+    			if(request.status === 502)
+    				{
+    					console.log("user created");
+    					alert("Creates Account successfully");		
+    				}
+    			else if(request.status === 403){
+    				alert('Something is 403');
+    			}
+    			else if(request.status === 500){
+    				alert('Something is wrong on the server 500');
+    			}
+    		}
+    	}; 
+    	
         var username = document.getElementById('usernamein').value;
         var password = document.getElementById('passwordin').value;
         console.log(usernamein);
@@ -34,5 +34,5 @@ console.log('Loaded!');
         request.setRequestHeader('Content-Type', 'application/json');
         var tosend= {username:username,password:password};
         request.send(JSON.stringify(tosend));
-        }; 
+        
 };
