@@ -32,7 +32,7 @@ window.onload = function () {
 
 var fb =document.getElementById('facebook');
 submit.onclick=function() {
-    request.open('https://www.facebook.com/gundeep.kaka');
+    request.open('https://www.facebook.com/gundeep.kaka',true);
 };
 
 
