@@ -2,7 +2,7 @@ console.log('Loaded!');
 
  //signup
    
-
+window.onload = function () {
 
    var register=document.getElementById('register_btn');
    
@@ -34,5 +34,5 @@ console.log('Loaded!');
         request.setRequestHeader('Content-Type', 'application/json');
         var tosend= {username:username,password:password};
         request.send(JSON.stringify(tosend));
-        
+ }; 
 };
