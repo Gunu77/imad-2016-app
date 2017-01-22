@@ -10,7 +10,7 @@ var config={
     database:'gunu77',
     host:'db.imad.hasura-app.io',
     port:'5432',
-    password:process.env.DB_PASSWORD
+    password:'db-gunu77-64332'
 };
 
 var app = express();
